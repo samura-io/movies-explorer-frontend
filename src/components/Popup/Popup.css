@@ -1,0 +1,160 @@
+.popup__container {
+    display: flex;
+    flex-direction: column;
+    width: 396px;
+    height: 100%;
+}
+
+.popup__img {
+    width: 38px;
+    height: 38px;
+}
+
+.popup__link-logo {
+    margin-top: 70px;
+    width: 38px;
+    height: 38px;
+}
+
+.popup__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+    margin: 40px 0;
+}
+
+.popup__form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.popup__label{
+    color: #8B8B8B;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: normal;    
+    margin-bottom: 5px;
+}
+
+.popup__input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #424242;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.popup__input_value_password{
+    color: #FFFFFF;
+}
+
+.popup__input:last-of-type {
+    margin-bottom: 0;
+}
+
+.popup__error {
+    color: #EE3465;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 6px;
+    height: 12px;
+}
+
+.popup__btn {
+    width: 100%;
+    height: 45px;
+    color: #FFFFFF;
+    background-color: #4285F4;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal; 
+    border: none;
+    margin-top: auto;
+    cursor: pointer; 
+    transition: opacity .3s ease;
+    align-self: flex-end;
+}
+
+.popup__btn:hover {
+    opacity: .8;
+}
+
+.popup__span {
+    text-align: center;
+    margin: 16px 0 70px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    transition: opacity .3s ease;
+}
+
+.popup__span:hover {
+    opacity: .8;
+}
+
+.popup__link {
+    text-decoration: none;
+    color: #4285F4;
+    margin-left: 6px;
+}
+
+@media screen and (max-width:900px) {
+    .popup__btn {
+        margin-top: 134px;
+    }
+
+    .popup__form {
+        height: auto;
+    }
+
+    .popup__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 396px;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .popup__container {
+        padding: 0 30px;
+        height: 100%;
+        justify-content: flex-start;
+    }
+
+    .popup__link-logo {
+        align-self: center;
+        margin-top: 56px;
+    }
+
+    .popup__title {
+        align-self: center;
+        margin: 50px 0 82px;
+    }
+
+    .popup__btn {
+        margin-top: auto;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .popup__form {
+        height: 100%;
+    }
+
+    .popup__span {
+        margin: 16px 0 30px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
