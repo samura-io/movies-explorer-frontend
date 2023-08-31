@@ -7,7 +7,7 @@
     max-width: 1140px;
     margin: 0 auto;
     color: #FFFFFF;
-    padding: 103px 70px;
+    padding: 101px 70px;
 }
 
 .techs__title {
@@ -129,6 +129,19 @@
 }
 
 @media screen and (max-width:350px) {
+    .techs {
+        background-color: #202020;
+    }
+
+    .techs__title {
+        border-bottom: 1px solid #000000;
+        padding-bottom: 28px;
+    }
+
+    .techs__description-title {
+        margin: 60px auto 24px;
+    }
+
     .techs__list {
         max-width: 178px;
         justify-content: flex-start;

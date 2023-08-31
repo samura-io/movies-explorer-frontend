@@ -24,7 +24,6 @@
 .profile__form {
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 410px;
     margin: 0 auto;
 }
@@ -74,6 +73,7 @@
 }
 
 .profile__btn_type_edit {
+    margin-top: 216px;
     margin-bottom: 16px;
 }
 
@@ -96,7 +96,8 @@
     font-size: 11px;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 34px;
+    margin-bottom: 20px;
+    margin-top: 208px;
 }
 
 .profile__btn_type_submit {
@@ -109,6 +110,14 @@
 @media screen and (max-width:900px) {
     .profile__title {
         margin: 235px 0 80px 0;
+    }
+
+    .profile__error {
+        margin-top: 170px;
+    }
+
+    .profile__btn_type_edit {
+        margin-top: 210px;
     }
 }
 

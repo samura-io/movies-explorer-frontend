@@ -82,7 +82,7 @@
     margin-right: 16px;
 }
 
-.navigation__link__type_main{
+.navigation__link_type_main{
     display: none;
 }
 
@@ -150,7 +150,7 @@
         right: -100%;
         min-width: 320px;
         max-width: 67%;
-        background-color: #000000;
+        background-color: #202020;
         position: fixed;
         display: flex;
         flex-direction: column;
@@ -177,7 +177,7 @@
         border-bottom: 2px solid #FFFFFF;
     }
 
-    .navigation__link__type_main {
+    .navigation__link_type_main {
         display: inline;
         margin: 159px 0 30px;
     }
@@ -218,7 +218,7 @@
         margin: auto 0 46px 0;
     }
 
-    .navigation__link__type_main {
+    .navigation__link_type_main {
         margin: 144px 0 21px;
     }
 }

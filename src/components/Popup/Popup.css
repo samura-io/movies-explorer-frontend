@@ -1,4 +1,4 @@
-.popup__container {
+.popup {
     display: flex;
     flex-direction: column;
     width: 396px;
@@ -48,6 +48,10 @@
     font-size: 14px;
     font-weight: 400;
     line-height: normal;
+}
+
+.popup__input:focus {
+    border-bottom: 1px solid #4285F4;
 }
 
 .popup__input_value_password{
@@ -107,24 +111,24 @@
 
 @media screen and (max-width:900px) {
     .popup__btn {
-        margin-top: 134px;
+        margin-top: auto;
     }
 
     .popup__form {
-        height: auto;
+        height: 100%;
     }
 
-    .popup__container {
+    .popup {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 396px;
-        height: 100%;
+        height: 700px;
     }
 }
 
 @media screen and (max-width:500px) {
-    .popup__container {
+    .popup {
         padding: 0 30px;
         height: 100%;
         justify-content: flex-start;

@@ -49,7 +49,7 @@
 }
 
 .about-project__board-container {
-    margin-top: 110px;
+    margin-top: 111px;
     display: flex;
     flex-direction: row;
 }
@@ -72,7 +72,7 @@
     line-height: normal;
     background-color: #303030;
     width: 100%;
-    padding: 9px 0;
+    padding: 9px 0 10px;
 }
 
 .about-project__weeks_special {

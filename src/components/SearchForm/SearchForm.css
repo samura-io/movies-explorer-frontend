@@ -6,7 +6,7 @@
     margin-bottom: 10px;
 }
 
-.secrch__elements {
+.search__elements {
     border-bottom: 1px solid #424242;
     padding-bottom: 70px;
 }
@@ -71,7 +71,7 @@
         padding: 80px 30px 70px;
     }
 
-    .secrch__elements {
+    .search__elements {
         padding-bottom: 109px;
     }
 
@@ -118,7 +118,7 @@
         margin-right: 20px;
     }
 
-    .secrch__elements {
+    .search__elements {
         padding-bottom: 34px;
     }
 }

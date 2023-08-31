@@ -13,11 +13,11 @@ function SearchForm() {
 
     return (
         <section className='search'>
-            <div className='secrch__elements'>
+            <div className='search__elements'>
                 <form className='search__form'>
                     <div className='search__container'>
                         <img className='search__icon' src= {search} alt='search_icon' onClick= {handleFocus}/>
-                        <input className='search__input' name='search' placeholder='Фильм' ref = { searchRef }></input>
+                        <input className='search__input' name='search' placeholder='Фильм' ref = { searchRef } required></input>
                         <button className='search__btn' type='submit'>Найти</button>
                     </div>
                     <FilterCheckbox />
