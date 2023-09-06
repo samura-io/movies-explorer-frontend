@@ -2,7 +2,7 @@ import React from 'react';
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard.js';
 
-function MoviesCardList({ searchMovies, message, onLike, savedMovies }) {
+function MoviesCardList({ searchMovies, message, onLike, savedMovies,activePreloader }) {
     const [ moviesQuantity, setMoviesQuantity ] = React.useState();
     const [ displayedFilms, setDisplayedFilms ] = React.useState([]);
     const [ addedMoviesQuantity, setAddedMoviesQuantity ] = React.useState(0);
@@ -45,6 +45,9 @@ function MoviesCardList({ searchMovies, message, onLike, savedMovies }) {
 
     React.useEffect(()=>{
             handlerResize();
+    }, [activePreloader]);
+
+    React.useEffect(()=>{
             setDisplayedFilms(searchMovies.slice(0, moviesQuantity));
             handlerDisplayButtonMore();
     }, [searchMovies]);

@@ -83,7 +83,8 @@ function Movies({loggedIn, savedMovies, onLike,onDelete}) {
                 searchMovies={searchMovies} 
                 message={message}
                 onLike={onLike}
-                savedMovies={savedMovies} /> } />
+                savedMovies={savedMovies}
+                activePreloader={activePreloader} /> } />
                 <Route path='/saved-movies' element={<ProtectedRoute 
             element={SavedMovies}
             loggedIn={loggedIn}
