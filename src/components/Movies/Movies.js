@@ -11,10 +11,10 @@ import Preloader from '../Preloader/Preloader.js';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
 
 function Movies({loggedIn, savedMovies, onLike,onDelete}) {
-    const [searchMovies, setSearchMovies] = React.useState([])
+    const [searchMovies, setSearchMovies] = React.useState([]);
     const [ activePreloader, setActivePreloader ] = React.useState(false);
     const [ message, setMessage] = React.useState('');
-    const [ searchText, setSearchText ] = React.useState('')
+    const [ searchText, setSearchText ] = React.useState('');
     const [ inputShortsMovieValue, setInputShortsMovieValue ] = React.useState('');
     const [filteredSavedMovies, setFilteredSavedMovies] = React.useState(savedMovies);
     const path = useLocation().pathname;
@@ -42,31 +42,41 @@ function Movies({loggedIn, savedMovies, onLike,onDelete}) {
             )
             setActivePreloader(false);
         } else {
-            getMoviesCards()
-            .then((res)=>{
-                return filterMovies(res, keywords, searchShortsMovies)
-            })
-            .then((moviesList)=>{
-                if (Object.keys(moviesList).length === 0 ){
-                    setSearchMovies([])
-                    setMessage('Ничего не найдено');
-                } else {
-                    setSearchMovies(moviesList);
-                    localStorage.setItem('search', JSON.stringify({
-                        'search-text':keywords,
-                        'search-short-input': searchShortsMovies,
-                        'search-result': moviesList
-                    }))
-                }
-            })
-            .catch((err)=>{
-                console.log(err);
-                setSearchMovies([])
-                setMessage("Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз");
-            })
-            .finally(()=>{
+            if (JSON.parse(localStorage.getItem('movies'))) {
+                const movies = JSON.parse(localStorage.getItem('movies'));
+                const filteredMovies = filterMovies(movies, keywords, searchShortsMovies);
+                handleFilter(filteredMovies, keywords, searchShortsMovies);
                 setActivePreloader(false);
-            })
+            } else {
+                getMoviesCards()
+                .then((res)=>{
+                    localStorage.setItem('movies', JSON.stringify(res));
+                    const filteredMovies = filterMovies(res, keywords, searchShortsMovies);
+                    handleFilter(filteredMovies, keywords, searchShortsMovies);
+                })
+                .catch((err)=>{
+                    console.log(err);
+                    setSearchMovies([])
+                    setMessage("Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз");
+                })
+                .finally(()=>{
+                    setActivePreloader(false);
+                })
+            }
+        }
+    }
+
+    function handleFilter(movies, keywords, checkbox){
+        if (Object.keys(movies).length === 0 ){
+            setSearchMovies([])
+            setMessage('Ничего не найдено');
+        } else {
+            setSearchMovies(filterMovies(movies, keywords, checkbox));
+            localStorage.setItem('search', JSON.stringify({
+                'search-text':keywords,
+                'search-short-input': checkbox,
+                'search-result': filterMovies(movies, keywords, checkbox)
+            }))
         }
     }
 
