@@ -63,7 +63,7 @@ function App() {
         api.login(values.email,values.password)
         .then(()=>{
             handleAuth();
-            navigate('/movies');
+            console.log('я сработал')
         })
         .catch((err)=>{
             console.log(err)

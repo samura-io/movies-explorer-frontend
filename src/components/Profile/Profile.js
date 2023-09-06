@@ -11,6 +11,8 @@ function Profile({onExit, onSubmit, profileErrorMessage}) {
     const {values, handleChange, isValid, resetForm, setValues} = useFormAndValidation();
     const [buttonDisabled, setButtonDisabled] = React.useState(true);
 
+    console.log(errorMessage)
+
     function handleEditSwitch() {
         resetForm();
         setErrorMessage('');
@@ -19,7 +21,6 @@ function Profile({onExit, onSubmit, profileErrorMessage}) {
     }
 
     React.useEffect(() => {
-        
         if (values.name === currentUserContext.name && values.email === currentUserContext.email) {
             setButtonDisabled(false);
         } else {
@@ -28,11 +29,12 @@ function Profile({onExit, onSubmit, profileErrorMessage}) {
     }, [values]);
 
     React.useEffect(() => {
+        setErrorMessage('');
         resetForm();
     }, [resetForm]);
 
     React.useEffect(() => {
-        if (profileErrorMessage === "Успешно!") {
+        if ((profileErrorMessage === "Успешно!") && isEdited) {
             setErrorMessage(profileErrorMessage);
             setTimeout(handleEditSwitch, 1000);
         }
