@@ -1,7 +1,10 @@
 import Popup from '../Popup/Popup';
-import './Register.css'
+import './Register.css';
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 
-function Register() {
+function Register({onSubmit, rigiserErrorMessage, loggedIn}) {
+
     return (
         <div className='register'>
             <Popup 
@@ -11,7 +14,10 @@ function Register() {
             linkName='Войти'
             linkTo='/signin'
             isRegister={true}
+            onSubmit = {onSubmit}
+            errorMessage={rigiserErrorMessage}
             />
+            {loggedIn && <Navigate to="/movies" />}
         </div>
     )
 };

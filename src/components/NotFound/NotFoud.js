@@ -1,7 +1,9 @@
 import './NotFound.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
-function NotFound() {
+function NotFound({loggedIn}) {
+
+    console.log(loggedIn);
 
     const navigate = useNavigate();
 
@@ -11,7 +13,7 @@ function NotFound() {
                 <h1 className='not-found__code'>404</h1>
                 <h2 className='not-found__message'>Страница не найдена</h2>
              </div>
-             <button className='not-found__btn' type='button' onClick={()=>{navigate(-1)}}>Назад</button>
+             <button className='not-found__btn' type='button' onClick={()=>{loggedIn ? navigate(-1) : navigate('/')}}>Назад</button>
         </div>
     )
 };

@@ -24,7 +24,7 @@ function Navigation({ loggedIn }) {
                         <nav className={`navigation__links ${openNavMenu && 'navigation__links_active'}`}>
                             <NavLink className={({isActive}) => `navigation__link navigation__link_type_main ${isActive ? 'navigation__link_active' : ' '}`} to='/' 
                             onClick={handlerToggleNavMenu}>Главная</NavLink>
-                            <NavLink className={({isActive}) => `navigation__link ${isActive ? 'navigation__link_active' : ''}`} to='/movies/all-movies' 
+                            <NavLink end className={({isActive}) => `navigation__link ${isActive ? 'navigation__link_active' : ''}`} to='/movies' 
                             onClick={handlerToggleNavMenu}>Фильмы</NavLink>
                             <NavLink className={({isActive}) => `navigation__link ${isActive ? 'navigation__link_active' : ''}`} to='/movies/saved-movies' 
                             onClick={handlerToggleNavMenu}>Сохраненные фильмы</NavLink>

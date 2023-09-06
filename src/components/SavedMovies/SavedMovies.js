@@ -1,22 +1,21 @@
 import '../MoviesCardList/MoviesCardList.css';
 import React from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard.js';
-import savedMovies from '../../vendor/savedMovies.js';
 
-function SavedMovies() {
+function SavedMovies({savedMovies, onDelete}) {
     
     return (
         <section className='cards'>
             <div className='cards__container'>
-                { savedMovies.map(({ id, nameRU, duration, image }) => (
-                    <div key={id}>
+                { savedMovies.map((cardInfo) => (
                         <MoviesCard 
-                        cardTitle={nameRU}
-                        cardDuration={duration}
-                        cardImg={`https://api.nomoreparties.co/${image.url}`}
+                        key={cardInfo.movieId}
+                        cardInfo = {cardInfo}
                         isSavedMovies= {true}
-                        />
-                    </div>
+                        image={cardInfo.image}
+                        savedMovies={savedMovies}
+                        onDelete={onDelete}
+                        ></MoviesCard>
                 ))
                 }
             </div>

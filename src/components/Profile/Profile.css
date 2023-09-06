@@ -38,6 +38,10 @@
     border-bottom: 1px solid #424242;
 }
 
+.profile__label_active {
+    border-bottom: 1px solid #4285F4;
+}
+
 .profile__label:last-of-type {
     padding-bottom: 0;
     border: none;
@@ -105,6 +109,17 @@
     background-color: #4285F4;
     font-size: 14px;
     font-weight: 500;
+    margin-top: auto;
+}
+
+.profile__btn_disabled {
+    background-color: #393939;
+    color: #818181;
+    cursor: default;
+}
+
+.profile__btn_disabled:hover {
+    opacity: 1;
 }
 
 @media screen and (max-width:900px) {

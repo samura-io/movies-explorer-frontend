@@ -3,7 +3,7 @@
     padding: 70px 70px 0;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 270px);
+    grid-template-columns: repeat(4, minmax(1px, 270px));
     column-gap: 20px;
     row-gap: 35px;
     justify-content: center;
@@ -29,12 +29,29 @@
     opacity: 0.8;
 }
 
-@media screen and (max-width:990px) {
+.cards__message {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    text-align: center;
+    margin: 30px auto;
+    padding: 0 30px;
+}
+
+@media screen and (max-width:1100px) {
+    .cards__container {
+        grid-template-columns: repeat(3, minmax(1px, 339px));
+    }
+}
+
+@media screen and (max-width:900px) {
     .cards__container {
         padding: 0 30px;
         row-gap: 30px;
         column-gap: 30px;
-        grid-template-columns: repeat(auto-fill, 339px);
+        grid-template-columns: repeat(2, minmax(1px, 339px));
     }
 }
 
