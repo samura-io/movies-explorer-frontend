@@ -1,0 +1,3 @@
+.movies {
+    min-height: calc(100vh - 186px - 74px);
+}

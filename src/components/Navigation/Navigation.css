@@ -1,0 +1,224 @@
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 45px;
+}
+
+.navigation__toggle {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.navigation__links {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navigation__elem_type_account {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 12px;
+    background-color: #073042;
+    border-radius: 40px;
+    box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+    padding: 3px 3px 3px 11px;
+}
+
+.navigation__elem_background_gray {
+    background-color: #202020;
+}
+
+.navigation__menu-button{
+    width: 44px;
+    height: 44px;
+    background-image: url(../../images/open-nav.svg);
+    background-position: center center;
+    background-size: cover;
+    display: none;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.navigation__dimming {
+    position: fixed;
+    background-color: #000000;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left: -100%;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.navigation__dimming_active {
+    opacity: .3;
+    left: 0;
+}
+
+.navigation__menu-button_active {
+    background-image: url(../../images/close-nav.svg);
+    width: 30px;
+    height: 30px;
+}
+
+.navigation__link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-right: 16px;
+}
+
+.navigation__link_type_main{
+    display: none;
+}
+
+.navigation__link_active {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navigation__link:last-of-type {
+    margin: 0;
+}
+
+.navigation__access-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    margin-right: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.navigation__access-link:hover {
+    opacity: 0.8;
+}
+
+.navigation__access-link:last-of-type {
+    margin: 0;
+}
+
+.navigation__access-link_signin {
+    padding: 8px 20px;
+    background-color: #3DDC84;
+    border-radius: 3px;
+    color: #000000;
+}
+
+.navigation__img {
+    padding: 8px;
+    background-color: #0F4157;
+    border-radius: 50px;
+    margin-left: 7px;
+}
+
+.navigation__img_background_gray {
+    background-color: #313131;
+}
+
+@media screen and (max-width:770px) {
+    .navigation__menu-button{
+        position: absolute;
+        display: block;
+        right: 0px;
+    }
+
+    .navigation__menu-button_active{
+        position: fixed;
+        right: 25px;
+    }
+
+    .navigation__links {
+        z-index: 1;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        min-width: 320px;
+        max-width: 67%;
+        background-color: #202020;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: right .5s ease;
+    }
+
+    .navigation__links_active {
+        right: 0;
+    }
+
+    .navigation__link {
+        text-decoration: none;
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: normal;
+        margin: 0 0 22px 0;
+        padding-bottom: 4px;
+    }
+
+    .navigation__link_active {
+        border-bottom: 2px solid #FFFFFF;
+    }
+
+    .navigation__link_type_main {
+        display: inline;
+        margin: 159px 0 30px;
+    }
+
+    .navigation__elem_type_account {
+        display: flex;
+        margin: auto 0 90px 0;
+        align-items: center;
+        text-decoration: none;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 12px;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .navigation__img {
+        background-color: #313131;
+        padding: 7px;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .navigation__access-link {
+        font-size: 10px;
+        margin-right: 14px;
+    }
+
+    .navigation__access-link_signin {
+        padding: 5px 12px;
+    }
+
+    .navigation__elem_type_account {
+        margin: auto 0 46px 0;
+    }
+
+    .navigation__link_type_main {
+        margin: 144px 0 21px;
+    }
+}
